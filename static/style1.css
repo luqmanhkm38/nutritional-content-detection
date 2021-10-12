@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/static/images/bg-web.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+}
+
+#isi{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.custom-button {
+    padding: 20px;
+    color: white;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.custom-button:hover {
+    background-color: #00b28f;
+}
+  
+.custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+}
+
+.common-btn{
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    padding: 6px 18px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.common-btn:hover{
+    background-color: #00b28f;
+}
+
+p{
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.nav-logo img{
+width: 50px;
+}
+
+.drag-area{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 2px dashed #fff;
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: column;
+    flex-basis: 45%
+}
+.drag-area.active{
+    border: 2px solid #fff;
+}
+.drag-area .icon{
+    padding-top: 20px;
+    font-size: 50px;
+    color: #fff;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+.drag-area span{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+.drag-area button{
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.result-area{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    width: 40%;
+    flex-basis: 50%;
+}
+
+.accordion{
+    width: 25%;
+    padding: 0 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+
+}
+
+.accordion .icon{
+    margin: 0 10px 0 0;
+    width: 30px;
+    height: 30px;
+    background: url(/images/icon.png);
+    border-radius: 50%;
+    float: left;
+    transition: all .5s ease-in;
+
+}
+
+.panel {
+    padding: 0 15px;
+    border-left: 1px solid;
+    margin-left: 25px;
+    font-size: 14px;
+    text-align: justify;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .5s ease-in;
+    
+}
+
+
+
+
+

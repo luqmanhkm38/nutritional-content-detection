@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Nutrition Detection</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <img src="/images/logo web.png" alt="">
+            </div>
+        </nav>
+        <div class="content">
+            <h1>Cari Tau Kandungan Gizi<br>Makanan Kamu Di sini!</h1>
+            <article id=isi>
+                <form action="/" method="get" enctype="multipart/form-data">
+                    <div class="drag-area" style="height: auto;">
+                        <img src={{url_for('static', filename=hasil_gambar)}} alt="">
+                    </div>
+                    <button type="submit" class="common-btn">Cari Tau Lagi!</button>
+                </form>
+                <div class="result-area" id="result"></div>
+            </article>
+        </div>
+            
+    </div>
+    <script type="text/javascript">
+        var outputHTML="";
+        var title = {{hasil_deteksi|safe}}; 
+        var content={{gizi_deteksi|safe}};
+
+        if (title.length>0){
+            outputHTML="<h3>Hasil Deteksi</h3>";
+        }
+
+        for (let i = 0; i < title.length; i++) {
+          outputHTML += "<div class='accordion'>" + "<div class='icon'></div>" + "<h5>" + title[i] + "</h5>" + "</div>"
+          + "<div class='panel'>" + "<p>" + content[i] + "</p>" + "</div>";
+        }        
+        document.getElementById("result").innerHTML = outputHTML;
+    </script>
+    <script src="/static/app.js"></script>
+    <script>
+        function reloadpage()
+        {
+        location.reload()
+        }
+    </script>
+</body>
+</html>

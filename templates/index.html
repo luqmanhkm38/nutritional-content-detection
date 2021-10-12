@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Nutrition Detection</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <img src="/static/images/logo web.png" alt="">
+            </div>
+        </nav>
+        <div class="content" style="margin-top: 100px;">
+            <h1>Cari Tau Kandungan Gizi<br> Makanan Kamu Di sini!</h1>
+            <article id=isi>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file_gambar" id="gambar" accept="image/png, image/jpg, image/jpeg" hidden="hidden">
+                    <button class="custom-button" type="button" id="custom-button" style="margin-top: 15px; margin-bottom: 15px;">Pilih Gambar</button>
+                    <span class="custom-text" id="custom-text"></span>
+                    <p>Silahkan Masukkan Gambar Makanan yang Kamu Makan</p>
+                    <button type="submit" class="common-btn" style="margin-top: 15px;">Cari Tau!</button>
+                </form>
+            </article>
+        </div>
+            
+    </div>
+    <script>
+        var file = document.getElementById('gambar');
+
+        file.onchange = function(e) {
+        var ext = this.value.match(/\.([^\.]+)$/)[1];
+        switch (ext) {
+            case 'jpg':
+            case 'jpeg':
+            case 'png':
+                break;
+            default:
+                alert('Format file yang anda tidak dapat digunakan, silahkan melakukan upload kembali dengan format file (JPG, JPEG atau PNG)');
+                this.value = '';
+        }
+        };
+    </script>
+    
+    <script>
+        const realFileBtn = document.getElementById("gambar");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
+
+        customBtn.addEventListener("click", function() {
+            realFileBtn.click();
+        });
+
+        realFileBtn.addEventListener("change", function() {
+        if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value;
+        } else {
+            customTxt.innerHTML = "Belum tersedia gambar yang dipilih";
+        }
+        });
+
+    </script>
+        
+    <script>
+        function reloadpage()
+        {
+        location.reload()
+        }
+    </script>
+</body>
+</html>
